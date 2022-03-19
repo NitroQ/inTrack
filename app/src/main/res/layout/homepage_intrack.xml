@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homepage_intrack">
+
+    <TextView
+        android:id="@+id/lbl_createAcc4"
+        android:layout_width="176dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="00 Hours of Work"
+        android:textColor="#DE703C"
+        android:textSize="45.77px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toEndOf="@+id/lbl_without7"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_createAcc3"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <TextView
+        android:id="@+id/lbl_without7"
+        android:layout_width="131dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Your Currently at "
+        android:textColor="#222222"
+        android:textSize="45.77px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_createAcc3"
+        app:layout_constraintVertical_bias="0.012" />
+
+    <Button
+        android:id="@+id/btn_Login2"
+        android:layout_width="432px"
+        android:layout_height="116px"
+        android:background="@drawable/shape_styles"
+        android:backgroundTint="#DE703C"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="Start Work"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_without7"
+        app:layout_constraintVertical_bias="0.042"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Login2"
+        app:layout_constraintVertical_bias="0.062"
+        app:srcCompat="@drawable/dtr_caption" />
+
+    <TextView
+        android:id="@+id/lbl_createAcc3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans_black"
+        android:text="03:22:20 PM"
+        android:textColor="#DE703C"
+        android:textSize="141.89px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_without6"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058"
+        app:srcCompat="@drawable/homepage_profile" />
+
+    <TextView
+        android:id="@+id/lbl_createAcc2"
+        android:layout_width="137dp"
+        android:layout_height="23dp"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="Dynamic Date"
+        android:textColor="#DE703C"
+        android:textSize="45.77px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toEndOf="@+id/lbl_without6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:id="@+id/lbl_without6"
+        android:layout_width="66dp"
+        android:layout_height="23dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Today is:"
+        android:textColor="#222222"
+        android:textSize="45.77px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:id="@+id/lbl_without8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Dynamic Name"
+        android:textAlignment="textStart"
+        android:textColor="#222222"
+        android:textSize="45.77px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063"
+        app:srcCompat="@drawable/welcome_caption" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="317dp"
+        android:layout_height="345dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="107dp">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="0dp"
+                    android:layout_height="116dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.555"
+                    app:srcCompat="@drawable/scrollsection_box" />
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.679"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_content" />
+
+                <TextView
+                    android:id="@+id/lbl_without9"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.476"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without13"
+                    android:layout_width="88dp"
+                    android:layout_height="21dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Month"
+                    android:textColor="#222222"
+                    android:textSize="45.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.065"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_without15"
+                    app:layout_constraintVertical_bias="0.100" />
+
+                <TextView
+                    android:id="@+id/lbl_without15"
+                    android:layout_width="89dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/nunito_sans_black"
+                    android:text="03"
+                    android:textColor="#DE703C"
+                    android:textSize="100px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.065"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.253" />
+
+                <TextView
+                    android:id="@+id/lbl_without12"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.350"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without9"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without14"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Hours"
+                    android:textColor="#DE703C"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.640"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without13"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.735" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/frameLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="123dp">
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="0dp"
+                    android:layout_height="116dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_box" />
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.679"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_content" />
+
+                <TextView
+                    android:id="@+id/lbl_without16"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.476"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without17"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.350"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without16"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without21"
+                    android:layout_width="88dp"
+                    android:layout_height="21dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Month"
+                    android:textColor="#222222"
+                    android:textSize="45.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.069"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_without22"
+                    app:layout_constraintVertical_bias="0.058" />
+
+                <TextView
+                    android:id="@+id/lbl_without22"
+                    android:layout_width="89dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/nunito_sans_black"
+                    android:text="03"
+                    android:textColor="#DE703C"
+                    android:textSize="100px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.303" />
+
+                <TextView
+                    android:id="@+id/lbl_without18"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Hours"
+                    android:textColor="#DE703C"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.640"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without21"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.705" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/frameLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="108dp">
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="0dp"
+                    android:layout_height="116dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_box" />
+
+                <ImageView
+                    android:id="@+id/imageView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.679"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_content" />
+
+                <TextView
+                    android:id="@+id/lbl_without23"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.476"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without24"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.350"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without23"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without25"
+                    android:layout_width="89dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/nunito_sans_black"
+                    android:text="03"
+                    android:textColor="#DE703C"
+                    android:textSize="100px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.303" />
+
+                <TextView
+                    android:id="@+id/lbl_without26"
+                    android:layout_width="88dp"
+                    android:layout_height="21dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Month"
+                    android:textColor="#222222"
+                    android:textSize="45.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.069"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_without25"
+                    app:layout_constraintVertical_bias="0.058" />
+
+                <TextView
+                    android:id="@+id/lbl_without27"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Hours"
+                    android:textColor="#DE703C"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.640"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without26"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.730" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/frameLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="121dp">
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="0dp"
+                    android:layout_height="116dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_box" />
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.679"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_content" />
+
+                <TextView
+                    android:id="@+id/lbl_without28"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.350"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without29"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without29"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.476"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without30"
+                    android:layout_width="89dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/nunito_sans_black"
+                    android:text="03"
+                    android:textColor="#DE703C"
+                    android:textSize="100px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.303" />
+
+                <TextView
+                    android:id="@+id/lbl_without31"
+                    android:layout_width="88dp"
+                    android:layout_height="21dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Month"
+                    android:textColor="#222222"
+                    android:textSize="45.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.069"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_without30"
+                    app:layout_constraintVertical_bias="0.058" />
+
+                <TextView
+                    android:id="@+id/lbl_without32"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Hours"
+                    android:textColor="#DE703C"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.640"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without31"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.705" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/frameLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="105dp">
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="0dp"
+                    android:layout_height="116dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_box" />
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.679"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/scrollsection_content" />
+
+                <TextView
+                    android:id="@+id/lbl_without33"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.350"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without34"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without34"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dynamic Time"
+                    android:textColor="#222222"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.476"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbl_without35"
+                    android:layout_width="89dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/nunito_sans_black"
+                    android:text="03"
+                    android:textColor="#DE703C"
+                    android:textSize="100px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.303" />
+
+                <TextView
+                    android:id="@+id/lbl_without36"
+                    android:layout_width="88dp"
+                    android:layout_height="21dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Month"
+                    android:textColor="#222222"
+                    android:textSize="45.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.069"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_without35"
+                    app:layout_constraintVertical_bias="0.058" />
+
+                <TextView
+                    android:id="@+id/lbl_without37"
+                    android:layout_width="86dp"
+                    android:layout_height="17dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Hours"
+                    android:textColor="#DE703C"
+                    android:textSize="35.0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.640"
+                    app:layout_constraintStart_toEndOf="@+id/lbl_without36"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.735" />
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
