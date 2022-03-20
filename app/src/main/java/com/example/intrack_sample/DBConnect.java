@@ -15,7 +15,7 @@ public class DBConnect extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB ) {
-        DB.execSQL("CREATE TABLE UserLogin (user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT UNIQUE NOT NULL, password TEXT NOT NULL)");
+        DB.execSQL("CREATE TABLE UserLogin (user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name TEXT NOT NULL, username TEXT UNIQUE NOT NULL, email TEXT NOT NULL, password TEXT NOT NULL)");
     }
 
     @Override
@@ -24,12 +24,14 @@ public class DBConnect extends SQLiteOpenHelper {
 
     }
 
-    public Boolean insertUserdata (String name, String contact){
+    public Boolean register (String name, String username, String email, String password){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentVal = new ContentValues();
 
         contentVal.put("name", name);
-        contentVal.put("contact", contact);
+        contentVal.put("username", username);
+        contentVal.put("email", email);
+        contentVal.put("password", password);
         long results = DB.insert("UserLogin", null, contentVal);
 
         if(results == -1){
@@ -82,9 +84,9 @@ public class DBConnect extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getdata (){
+    public Cursor userLogin (String uname, String pass){
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin", null);
+        Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin WHERE username = ? AND password = ?", new String[]{uname, pass});
 
         return cursor;
 

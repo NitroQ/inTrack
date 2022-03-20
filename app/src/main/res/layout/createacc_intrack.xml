@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/bg_intrack" />
 
     <Button
-        android:id="@+id/btn_CreateAcc"
+        android:id="@+id/btn_create"
         android:layout_width="854px"
         android:layout_height="139px"
         android:background="@drawable/shape_styles"
@@ -29,11 +29,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pass"
         app:layout_constraintVertical_bias="0.284" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txt_pass"
         android:layout_width="854px"
         android:layout_height="133px"
         android:background="@drawable/shape_styles"
@@ -50,7 +50,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/txt_username"
         android:layout_width="854px"
         android:layout_height="133px"
         android:layout_marginBottom="92dp"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/txt_name"
         app:layout_constraintVertical_bias="0.047" />
 
     <TextView
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/txt_username"
         app:layout_constraintVertical_bias="0.063" />
 
     <TextView
@@ -108,11 +108,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_EmailAdd"
+        app:layout_constraintTop_toBottomOf="@+id/txt_email"
         app:layout_constraintVertical_bias="0.092" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txt_name"
         android:layout_width="854px"
         android:layout_height="133px"
         android:layout_marginBottom="92dp"
@@ -168,7 +168,7 @@
         app:srcCompat="@drawable/createacctext" />
 
     <EditText
-        android:id="@+id/edit_EmailAdd"
+        android:id="@+id/txt_email"
         android:layout_width="854px"
         android:layout_height="133px"
         android:layout_marginTop="20dp"
