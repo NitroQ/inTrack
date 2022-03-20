@@ -59,8 +59,7 @@ public class login_intrack extends AppCompatActivity {
                             id = res.getString(0);
                             name = res.getString(1);
                         }
-                        Toast.makeText(login_intrack.this, id + " " + name, Toast.LENGTH_SHORT).show();
-
+                       openHome(id, name);
                     }
 
 
@@ -74,8 +73,10 @@ public class login_intrack extends AppCompatActivity {
         startActivity(createAcc);
     }
 
-    public void openHome() {
+    private void openHome(String id, String name) {
         Intent home = new Intent(this, homepage_intrack.class);
+        home.putExtra("id", id);
+        home.putExtra("name", name);
         startActivity(home);
     }
 
