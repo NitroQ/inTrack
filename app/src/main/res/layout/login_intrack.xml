@@ -18,50 +18,35 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/bg_intrack" />
 
-    <Button
-        android:id="@+id/btn_Login"
-        android:layout_width="854px"
-        android:layout_height="139px"
-        android:background="@drawable/shape_styles"
-        android:backgroundTint="#DE703C"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="Login"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_without10"
-        app:layout_constraintVertical_bias="0.2" />
-
     <TextView
         android:id="@+id/lbl_without11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="Reset"
-        android:textColor="#DE703C"
-        android:textSize="40.43px"
+        android:text="Password"
+        android:textColor="#222222"
+        android:textSize="46.07px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toEndOf="@+id/lbl_without10"
-        app:layout_constraintTop_toBottomOf="@+id/txt_password"
-        app:layout_constraintVertical_bias="0.094" />
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_uname"
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/lbl_without10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans"
-        android:text="Forgot your Password?"
-        android:textColor="#8D8D8D"
-        android:textSize="40.43px"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="Username"
+        android:textColor="#222222"
+        android:textSize="46.07px"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_password"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintTop_toBottomOf="@+id/lbl_without5"
+        app:layout_constraintVertical_bias="0.042" />
 
     <EditText
         android:id="@+id/txt_password"
@@ -75,10 +60,27 @@
         android:textSize="46.07px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_uname"
-        app:layout_constraintVertical_bias="0.065"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_without11"
+        app:layout_constraintVertical_bias="0.052"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btn_Login"
+        android:layout_width="854px"
+        android:layout_height="139px"
+        android:background="@drawable/shape_styles"
+        android:backgroundTint="#DE703C"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="Login"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password"
+        app:layout_constraintVertical_bias="0.134" />
 
     <EditText
         android:id="@+id/txt_uname"
@@ -94,8 +96,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_without5"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintTop_toBottomOf="@+id/lbl_without10"
+        app:layout_constraintVertical_bias="0.061"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/lbl_createAcc"
@@ -122,33 +125,33 @@
         android:textSize="40.43px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="165dp"
         android:layout_height="55dp"
+        android:src="@drawable/logintext"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.084"
-        android:src="@drawable/logintext" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="476px"
         android:layout_height="228.62px"
+        android:src="@drawable/logo_intrack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193"
-        android:src="@drawable/logo_intrack" />
+        app:layout_constraintVertical_bias="0.207" />
 
 </android.support.constraint.ConstraintLayout>
