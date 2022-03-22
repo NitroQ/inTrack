@@ -57,7 +57,7 @@ public class login_intrack extends AppCompatActivity {
                     }else{
                         while (res.moveToNext()) {
                             id = res.getString(0);
-                            name = res.getString(1);
+                            name = res.getString(2);
                         }
                        openHome(id, name);
                     }

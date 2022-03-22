@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class createaccount_intrack extends AppCompatActivity {
 
-    EditText txt_name, txt_username, txt_email, txt_pass;
+    EditText txt_name, txt_name2, txt_username, txt_email, txt_pass, txt_pass2;
     Button btn_create;
     DBConnect DB;
 
@@ -32,9 +32,11 @@ public class createaccount_intrack extends AppCompatActivity {
 
 
         txt_name = findViewById(R.id.txt_name);
+        txt_name2 = findViewById(R.id.txt_name2);
         txt_username = findViewById(R.id.txt_username);
         txt_email = findViewById(R.id.txt_email);
         txt_pass = findViewById(R.id.txt_pass);
+        txt_pass2 = findViewById(R.id.txt_pass2);
         txt_name = findViewById(R.id.txt_name);
         btn_create = findViewById(R.id.btn_create);
         DB = new DBConnect(this);
@@ -42,12 +44,16 @@ public class createaccount_intrack extends AppCompatActivity {
         btn_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = txt_name.getText().toString();
+                String fname = txt_name.getText().toString();
+                String lname = txt_name2.getText().toString();
                 String uname = txt_username.getText().toString();
                 String email = txt_email.getText().toString();
                 String pass = txt_pass.getText().toString();
+                String pass2 = txt_pass2.getText().toString();
 
-               if(name.trim().equals("") || name == null){
+               if(fname.trim().equals("") || fname == null){
+                   Toast.makeText(createaccount_intrack.this, "Name is Required", Toast.LENGTH_SHORT).show();
+               }else if(lname.trim().equals("") || lname == null){
                    Toast.makeText(createaccount_intrack.this, "Name is Required", Toast.LENGTH_SHORT).show();
                }else if(uname.trim().equals("") || uname == null){
                    Toast.makeText(createaccount_intrack.this, "Username is Required", Toast.LENGTH_SHORT).show();
@@ -55,8 +61,10 @@ public class createaccount_intrack extends AppCompatActivity {
                    Toast.makeText(createaccount_intrack.this, "Email is Required", Toast.LENGTH_SHORT).show();
                 }else if(pass.trim().equals("") || pass == null){
                    Toast.makeText(createaccount_intrack.this, "Password is Required", Toast.LENGTH_SHORT).show();
-                }else{
-                    Boolean register = DB.register(name, uname, email, pass);
+                }else if(!pass.equals(pass2)){
+                   Toast.makeText(createaccount_intrack.this, "Passwords Do Not Match.", Toast.LENGTH_SHORT).show();
+               }else{
+                    Boolean register = DB.register(fname, lname, uname, email, pass);
 
                     if (register) {
                         Toast.makeText(createaccount_intrack.this, "Account Registered!", Toast.LENGTH_SHORT).show();
@@ -65,9 +73,11 @@ public class createaccount_intrack extends AppCompatActivity {
                     } else {
                         Toast.makeText(createaccount_intrack.this, "Failed to Register!", Toast.LENGTH_SHORT).show();
                          txt_name.setText("");
+                         txt_name2.setText("");
                          txt_username.setText("");
                          txt_email.setText("");
                          txt_pass.setText("");
+                         txt_pass2.setText("");
                     }
                 }
 

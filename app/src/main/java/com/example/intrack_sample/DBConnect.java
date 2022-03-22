@@ -14,8 +14,8 @@ public class DBConnect extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase DB ) {
-        DB.execSQL("CREATE TABLE UserLogin (user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name TEXT NOT NULL, username TEXT UNIQUE NOT NULL, email TEXT NOT NULL, password TEXT NOT NULL)");
+    public void onCreate(SQLiteDatabase DB) {
+        DB.execSQL("CREATE TABLE UserLogin (user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, fname TEXT NOT NULL, lname TEXT NOT NULL, username TEXT UNIQUE NOT NULL, email TEXT NOT NULL, password TEXT NOT NULL)");
 //        DB.execSQL("CREATE TABLE UserRecord (user_id INTEGER NOT NULL, Time_In DATE, Time_Out DATE, Record_Date DATE NOT NULL)");
     }
 
@@ -23,14 +23,14 @@ public class DBConnect extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
         DB.execSQL("DROP Table if exists UserLogin");
-
     }
 
-    public Boolean register (String name, String username, String email, String password){
+    public Boolean register (String fname,String lname, String username, String email, String password){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentVal = new ContentValues();
 
-        contentVal.put("name", name);
+        contentVal.put("fname", fname);
+        contentVal.put("lname", lname);
         contentVal.put("username", username);
         contentVal.put("email", email);
         contentVal.put("password", password);
@@ -43,48 +43,48 @@ public class DBConnect extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean updateUserdata (String name, String contact){
-        SQLiteDatabase DB = this.getWritableDatabase();
-        ContentValues contentVal = new ContentValues();
-        contentVal.put("contact", contact);
-
-        Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin WHERE name = ?", new String[]{name});
-
-        if (cursor.getCount()>0){
-            long result = DB.update("UserLogin",contentVal, "name=?", new String[]{name});
-
-            if(result == -1){
-                return false;
-            }else{
-                return true;
-            }
-
-        }else{
-            return false;
-        }
-
-    }
-
-    public Boolean deletedata (String name){
-        SQLiteDatabase DB = this.getWritableDatabase();
-        ContentValues contentVal = new ContentValues();
-
-        Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin WHERE name = ?", new String[]{name});
-
-        if (cursor.getCount()>0){
-            long result = DB.delete("UserLogin","name=?", new String[]{name});
-
-            if(result == -1){
-                return false;
-            }else{
-                return true;
-            }
-
-        }else{
-            return false;
-        }
-
-    }
+//    public Boolean updateUserdata (String name, String contact){
+//        SQLiteDatabase DB = this.getWritableDatabase();
+//        ContentValues contentVal = new ContentValues();
+//        contentVal.put("contact", contact);
+//
+//        Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin WHERE name = ?", new String[]{name});
+//
+//        if (cursor.getCount()>0){
+//            long result = DB.update("UserLogin",contentVal, "name=?", new String[]{name});
+//
+//            if(result == -1){
+//                return false;
+//            }else{
+//                return true;
+//            }
+//
+//        }else{
+//            return false;
+//        }
+//
+//    }
+//
+//    public Boolean deletedata (String name){
+//        SQLiteDatabase DB = this.getWritableDatabase();
+//        ContentValues contentVal = new ContentValues();
+//
+//        Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin WHERE name = ?", new String[]{name});
+//
+//        if (cursor.getCount()>0){
+//            long result = DB.delete("UserLogin","name=?", new String[]{name});
+//
+//            if(result == -1){
+//                return false;
+//            }else{
+//                return true;
+//            }
+//
+//        }else{
+//            return false;
+//        }
+//
+//    }
 
     public Cursor userLogin (String uname, String pass){
         SQLiteDatabase DB = this.getWritableDatabase();
