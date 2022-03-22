@@ -5,211 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--    createacccomment-->
+    <!--    scrollview sa createacc-->
 
     <ImageView
         android:id="@+id/img_BG"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="463dp"
+        android:layout_height="783dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/bg_intrack" />
-
-    <TextView
-        android:id="@+id/lbl_without8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="First Name"
-        android:textColor="#222222"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <EditText
-        android:id="@+id/txt_name2"
-        android:layout_width="415px"
-        android:layout_height="120px"
-        android:layout_marginBottom="92dp"
-        android:background="@drawable/shape_styles"
-        android:ems="15"
-        android:fontFamily="@font/nunito_sans"
-        android:inputType="textPersonName"
-        android:padding="25px"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_without"
-        app:layout_constraintVertical_bias="0.034" />
-
-    <Button
-        android:id="@+id/btn_create"
-        android:layout_width="854px"
-        android:layout_height="120px"
-        android:background="@drawable/shape_styles"
-        android:backgroundTint="#DE703C"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="CREATE ACCOUNT"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_pass2"
-        app:layout_constraintVertical_bias="0.292" />
-
-    <EditText
-        android:id="@+id/txt_pass"
-        android:layout_width="854px"
-        android:layout_height="120px"
-        android:background="@drawable/shape_styles"
-        android:ems="10"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:inputType="textPassword"
-        android:padding="25px"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_without4"
-        app:layout_constraintVertical_bias="0.057"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/txt_pass2"
-        android:layout_width="854px"
-        android:layout_height="120px"
-        android:background="@drawable/shape_styles"
-        android:ems="10"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:inputType="textPassword"
-        android:padding="25px"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_without19"
-        app:layout_constraintVertical_bias="0.131"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/txt_username"
-        android:layout_width="854px"
-        android:layout_height="120px"
-        android:layout_marginBottom="92dp"
-        android:background="@drawable/shape_styles"
-        android:ems="15"
-        android:fontFamily="@font/nunito_sans"
-        android:inputType="textPersonName"
-        android:padding="25px"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_without2"
-        app:layout_constraintVertical_bias="0.037" />
-
-    <TextView
-        android:id="@+id/lbl_without2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="Username"
-        android:textColor="#222222"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_name"
-        app:layout_constraintVertical_bias="0.027" />
-
-    <TextView
-        android:id="@+id/lbl_without3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="Email Address"
-        android:textColor="#222222"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_username"
-        app:layout_constraintVertical_bias="0.04" />
-
-    <TextView
-        android:id="@+id/lbl_without4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="Password"
-        android:textColor="#222222"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_email"
-        app:layout_constraintVertical_bias="0.06" />
-
-    <TextView
-        android:id="@+id/lbl_without19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="Re-enter Password"
-        android:textColor="#222222"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_pass"
-        app:layout_constraintVertical_bias="0.106" />
-
-    <EditText
-        android:id="@+id/txt_name"
-        android:layout_width="420px"
-        android:layout_height="120px"
-        android:layout_marginBottom="92dp"
-        android:background="@drawable/shape_styles"
-        android:ems="15"
-        android:fontFamily="@font/nunito_sans"
-        android:inputType="textPersonName"
-        android:padding="25px"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_without"
-        app:layout_constraintVertical_bias="0.034" />
-
-    <TextView
-        android:id="@+id/lbl_without"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans_bold"
-        android:text="Last Name"
-        android:textColor="#222222"
-        android:textSize="46.07px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toEndOf="@+id/lbl_without8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.021" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -235,20 +41,232 @@
         app:layout_constraintVertical_bias="0.021"
         app:srcCompat="@drawable/createacctext" />
 
-    <EditText
-        android:id="@+id/txt_email"
-        android:layout_width="854px"
-        android:layout_height="120px"
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="311dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="7dp"
         android:background="@drawable/shape_styles"
-        android:ems="10"
-        android:fontFamily="@font/nunito_sans"
-        android:inputType="textEmailAddress"
-        android:padding="25px"
-        android:textSize="46.07px"
+        android:backgroundTint="#DE703C"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="CREATE ACCOUNT"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.982" />
+
+    <ScrollView
+        android:id="@+id/scrolling"
+        android:layout_width="326dp"
+        android:layout_height="440dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_without3"
-        app:layout_constraintVertical_bias="0.055"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.12"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lbl_without8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="First Name"
+                android:textColor="#222222"
+                android:textSize="46.07px"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+            <EditText
+                android:id="@+id/txt_name2"
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:layout_marginBottom="92dp"
+                android:background="@drawable/shape_styles"
+                android:ems="15"
+                android:fontFamily="@font/nunito_sans"
+                android:inputType="textPersonName"
+                android:padding="25px"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_without"
+                app:layout_constraintVertical_bias="0.4"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/lbl_without"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="Last Name"
+                android:textColor="#222222"
+                android:textSize="46.07px"
+                app:layout_constraintVertical_bias="0.021" />
+
+            <EditText
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:background="@drawable/shape_styles"
+                android:ems="10"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:inputType="textPersonName"
+                android:padding="25px"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_without4"
+                app:layout_constraintVertical_bias="0.4"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/lbl_without2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="Username"
+                android:textColor="#222222"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_name"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <EditText
+                android:id="@+id/txt_username"
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:background="@drawable/shape_styles"
+                android:ems="10"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:inputType="textPersonName"
+                android:padding="25px"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_without19"
+                app:layout_constraintVertical_bias="0.4"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/lbl_without3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="Email Address"
+                android:textColor="#222222"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.145"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_username"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <EditText
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:layout_marginBottom="92dp"
+                android:background="@drawable/shape_styles"
+                android:ems="15"
+                android:fontFamily="@font/nunito_sans"
+                android:inputType="textPersonName"
+                android:padding="25px"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_without2"
+                app:layout_constraintVertical_bias="0.4" />
+
+
+            <TextView
+                android:id="@+id/lbl_without4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="Password"
+                android:textColor="#222222"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.129"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_email"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <EditText
+                android:id="@+id/txt_pass"
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:layout_marginBottom="92dp"
+                android:background="@drawable/shape_styles"
+                android:ems="15"
+                android:fontFamily="@font/nunito_sans"
+                android:inputType="textPassword"
+                android:padding="25px"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.827"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_without"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <TextView
+                android:id="@+id/lbl_without19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="Re-enter Password"
+                android:textColor="#222222"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.168"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_pass"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <EditText
+                android:id="@+id/txt_pass2"
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:layout_marginBottom="92dp"
+                android:background="@drawable/shape_styles"
+                android:ems="15"
+                android:fontFamily="@font/nunito_sans"
+                android:inputType="textPassword"
+                android:padding="25px"
+                android:textSize="46.07px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.827"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.4" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 </android.support.constraint.ConstraintLayout>
