@@ -16,13 +16,14 @@ public class DBConnect extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("CREATE TABLE UserLogin (user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, fname TEXT NOT NULL, lname TEXT NOT NULL, username TEXT UNIQUE NOT NULL, email TEXT NOT NULL, password TEXT NOT NULL)");
-//        DB.execSQL("CREATE TABLE UserRecord (user_id INTEGER NOT NULL, Time_In DATE, Time_Out DATE, Record_Date DATE NOT NULL)");
+        DB.execSQL("CREATE TABLE UserRecord (user_id INTEGER NOT NULL, Time_In VARCHAR(5) NOT NULL, Time_Out VARCHAR(5) , Total INT, Record_Date DATE UNIQUE NOT NULL)");
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
         DB.execSQL("DROP Table if exists UserLogin");
+        DB.execSQL("DROP Table if exists UserRecord");
     }
 
     public Boolean register (String fname,String lname, String username, String email, String password){
@@ -43,49 +44,6 @@ public class DBConnect extends SQLiteOpenHelper {
         }
     }
 
-//    public Boolean updateUserdata (String name, String contact){
-//        SQLiteDatabase DB = this.getWritableDatabase();
-//        ContentValues contentVal = new ContentValues();
-//        contentVal.put("contact", contact);
-//
-//        Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin WHERE name = ?", new String[]{name});
-//
-//        if (cursor.getCount()>0){
-//            long result = DB.update("UserLogin",contentVal, "name=?", new String[]{name});
-//
-//            if(result == -1){
-//                return false;
-//            }else{
-//                return true;
-//            }
-//
-//        }else{
-//            return false;
-//        }
-//
-//    }
-//
-//    public Boolean deletedata (String name){
-//        SQLiteDatabase DB = this.getWritableDatabase();
-//        ContentValues contentVal = new ContentValues();
-//
-//        Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin WHERE name = ?", new String[]{name});
-//
-//        if (cursor.getCount()>0){
-//            long result = DB.delete("UserLogin","name=?", new String[]{name});
-//
-//            if(result == -1){
-//                return false;
-//            }else{
-//                return true;
-//            }
-//
-//        }else{
-//            return false;
-//        }
-//
-//    }
-
     public Cursor userLogin (String uname, String pass){
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("SELECT * FROM UserLogin WHERE username = ? AND password = ?", new String[]{uname, pass});
@@ -93,4 +51,57 @@ public class DBConnect extends SQLiteOpenHelper {
         return cursor;
 
     }
+
+    public Boolean findExistingDate (String id, String Record_Date){
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("SELECT * FROM UserRecord WHERE user_id = ? AND Record_Date = ?", new String[]{id, Record_Date});
+
+
+        if(cursor.getCount() == 0){
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+
+    public Boolean TimeIn (String user_id, String Time_In, String Record_Date){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentVal = new ContentValues();
+
+        contentVal.put("user_id", user_id);
+        contentVal.put("Time_In", Time_In);
+        contentVal.put("Record_Date", Record_Date);
+        long results = DB.insert("UserRecord", null, contentVal);
+
+        if(results == -1){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public Boolean TimeOut (String user_id, String Time_Out, String total,  String Record_Date){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentVal = new ContentValues();
+        contentVal.put("Time_Out", Time_Out);
+        contentVal.put("Total", total);
+
+        Cursor cursor = DB.rawQuery("SELECT * FROM UserRecord WHERE user_id = ? AND Record_Date = ?", new String[]{user_id, Record_Date});
+
+        if (cursor.getCount()>0){
+            long result = DB.update("UserRecord",contentVal, "user_id = ? AND Record_Date = ?", new String[]{user_id, Record_Date});
+
+            if(result == -1){
+                return false;
+            }else{
+                return true;
+            }
+
+        }else{
+            return false;
+        }
+    }
+
 }
