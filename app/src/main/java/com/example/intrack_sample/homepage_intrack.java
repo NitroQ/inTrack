@@ -1,6 +1,7 @@
 package com.example.intrack_sample;
 
 import android.annotation.SuppressLint;
+import android.database.Cursor;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
@@ -60,6 +61,9 @@ public class homepage_intrack extends AppCompatActivity {
         }else{
             btn_end.setVisibility(View.INVISIBLE);
         }
+        if(DB.findExistingTime(id, getDate())){
+            btn_end.setVisibility(View.INVISIBLE);
+        }
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,8 +79,54 @@ public class homepage_intrack extends AppCompatActivity {
             }
         });
 
+        btn_end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String timeinval = "";
+                Cursor rs = DB.findTimeIn(id, getDate());
+
+                if(rs.getCount() != 0){
+                    while(rs.moveToNext()){
+                       timeinval = rs.getString(1);
+                    }
+                }else{
+                    Toast.makeText(homepage_intrack.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
+                }
+
+                int hour = 0;
+                int min = 0;
+                if(!timeinval.equals("")) {
+                    String[] timein = timeinval.split(":");
+                    String[] timeout = getTime().split(":");
+                    hour += Integer.parseInt(timeout[0])-Integer.parseInt(timein[0]);
+                    int start = Integer.parseInt(timein[1]);
+                    int end = Integer.parseInt(timeout[1]);
+                    if(start > end){
+                        --hour;
+                        min += 60;
+                    }
+                    min += Math.abs(end-start);
+                }
+                String result = String.valueOf((hour*60) + min);
+
+                Boolean timeoutval = DB.TimeOut(id, getTime(), result, getDate());
+
+                if(timeoutval){
+                    Toast.makeText(homepage_intrack.this, "Timed Out!", Toast.LENGTH_SHORT).show();
+                    btn_end.setVisibility(View.INVISIBLE);
+                }else{
+                    Toast.makeText(homepage_intrack.this, "Something went Wrong, Refresh Page!", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
     }
 
+
+    public void displayData(){
+
+    }
 
 
     private String getTime() {
@@ -105,10 +155,22 @@ public class homepage_intrack extends AppCompatActivity {
                     int hour = cal.get(Calendar.HOUR_OF_DAY);
                     int min = cal.get(Calendar.MINUTE);
                     int sec = cal.get(Calendar.SECOND);
-                    String hours = String.valueOf(hour).length() == 1 ?  "0" + String.valueOf(hour) : String.valueOf(hour);
+                    Boolean halfhour = false;
+
+                    if (hour > 12){
+                        hour -= 12;
+                        halfhour = true;
+                    }
+
+                    String hours = "";
+                    if(String.valueOf(hour).length() == 1){
+                        hours = "0" + String.valueOf(hour);
+                    } else{
+                        hours = String.valueOf(hour);
+                    }
                     String minutes = String.valueOf(min).length() == 1 ?  "0" + String.valueOf(min) : String.valueOf(min);
                     String seconds = String.valueOf(sec).length() == 1 ?  "0" + String.valueOf(sec) : String.valueOf(sec);
-                    String time = hours + ":"+ minutes+ ":"+ seconds;
+                    String time = hours + ":"+ minutes+ ":"+ seconds + (halfhour ? " PM": " AM");
                     real_time.setText(time);
                 }catch (Exception e) {}
             }

@@ -16,7 +16,7 @@ public class DBConnect extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("CREATE TABLE UserLogin (user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, fname TEXT NOT NULL, lname TEXT NOT NULL, username TEXT UNIQUE NOT NULL, email TEXT NOT NULL, password TEXT NOT NULL)");
-        DB.execSQL("CREATE TABLE UserRecord (user_id INTEGER NOT NULL, Time_In VARCHAR(5) NOT NULL, Time_Out VARCHAR(5) , Total INT, Record_Date DATE UNIQUE NOT NULL)");
+        DB.execSQL("CREATE TABLE UserRecord (user_id INTEGER NOT NULL, Time_In VARCHAR(6) NOT NULL, Time_Out VARCHAR(6) , Total INT, Record_Date DATE UNIQUE NOT NULL)");
     }
 
 
@@ -56,14 +56,26 @@ public class DBConnect extends SQLiteOpenHelper {
 
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("SELECT * FROM UserRecord WHERE user_id = ? AND Record_Date = ?", new String[]{id, Record_Date});
-
-
         if(cursor.getCount() == 0){
             return false;
         }else{
             return true;
         }
-
+    }
+    public Boolean findExistingTime (String id, String Record_Date){
+        Boolean time = false;
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("SELECT * FROM UserRecord WHERE user_id = ? AND Record_Date = ?", new String[]{id, Record_Date});
+        if(cursor.getCount() != 0){
+            while(cursor.moveToNext()){
+                if(cursor.getString(2) != null){
+                    time = true;
+                }
+            }
+        }else{
+                time = false;
+        }
+        return time;
     }
 
     public Boolean TimeIn (String user_id, String Time_In, String Record_Date){
@@ -80,6 +92,14 @@ public class DBConnect extends SQLiteOpenHelper {
         }else{
             return true;
         }
+    }
+
+    public Cursor findTimeIn (String user_id,  String Record_Date){
+        SQLiteDatabase DB = this.getWritableDatabase();
+
+        Cursor cursor = DB.rawQuery("SELECT * FROM UserRecord WHERE user_id = ? AND Record_Date = ?", new String[]{user_id, Record_Date});
+
+        return cursor;
     }
 
     public Boolean TimeOut (String user_id, String Time_Out, String total,  String Record_Date){
@@ -102,6 +122,12 @@ public class DBConnect extends SQLiteOpenHelper {
         }else{
             return false;
         }
+    }
+
+    public Cursor finduserData (String id){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("SELECT * FROM UserRecord WHERE user_id = ? ", new String[]{id});
+        return cursor;
     }
 
 }
