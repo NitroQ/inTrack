@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<!--    createacccomment-->
+
     <ImageView
         android:id="@+id/img_BG"
         android:layout_width="0dp"
