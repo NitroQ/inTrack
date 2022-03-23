@@ -7,7 +7,7 @@
     tools:context=".homepage_intrack">
 
     <TextView
-        android:id="@+id/lbl_createAcc4"
+        android:id="@+id/workhours"
         android:layout_width="176dp"
         android:layout_height="24dp"
         android:fontFamily="@font/nunito_sans_bold"
@@ -229,7 +229,7 @@
                     app:srcCompat="@drawable/scrollsection_content" />
 
                 <TextView
-                    android:id="@+id/lbl_without9"
+                    android:id="@+id/txt_timein1"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -243,7 +243,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without13"
+                    android:id="@+id/txt_month1"
                     android:layout_width="88dp"
                     android:layout_height="21dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -254,11 +254,11 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.065"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_without15"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_date1"
                     app:layout_constraintVertical_bias="0.100" />
 
                 <TextView
-                    android:id="@+id/lbl_without15"
+                    android:id="@+id/txt_date1"
                     android:layout_width="89dp"
                     android:layout_height="44dp"
                     android:fontFamily="@font/nunito_sans_black"
@@ -273,7 +273,7 @@
                     app:layout_constraintVertical_bias="0.253" />
 
                 <TextView
-                    android:id="@+id/lbl_without12"
+                    android:id="@+id/txt_timeout1"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -283,11 +283,11 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.350"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without9"
+                    app:layout_constraintStart_toEndOf="@+id/txt_timein1"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without14"
+                    android:id="@+id/txt_hours1"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -297,7 +297,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.640"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without13"
+                    app:layout_constraintStart_toEndOf="@+id/txt_month1"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.735" />
             </android.support.constraint.ConstraintLayout>
@@ -329,7 +329,7 @@
                     app:srcCompat="@drawable/scrollsection_content" />
 
                 <TextView
-                    android:id="@+id/lbl_without16"
+                    android:id="@+id/txt_timein2"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -343,7 +343,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without17"
+                    android:id="@+id/txt_timeout2"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -353,11 +353,11 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.350"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without16"
+                    app:layout_constraintStart_toEndOf="@+id/txt_timein2"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without21"
+                    android:id="@+id/txt_month2"
                     android:layout_width="88dp"
                     android:layout_height="21dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -368,11 +368,11 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.069"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_without22"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_date2"
                     app:layout_constraintVertical_bias="0.058" />
 
                 <TextView
-                    android:id="@+id/lbl_without22"
+                    android:id="@+id/txt_date2"
                     android:layout_width="89dp"
                     android:layout_height="44dp"
                     android:fontFamily="@font/nunito_sans_black"
@@ -387,7 +387,7 @@
                     app:layout_constraintVertical_bias="0.303" />
 
                 <TextView
-                    android:id="@+id/lbl_without18"
+                    android:id="@+id/txt_hours2"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -397,7 +397,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.640"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without21"
+                    app:layout_constraintStart_toEndOf="@+id/txt_month2"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.705" />
             </android.support.constraint.ConstraintLayout>
@@ -429,7 +429,7 @@
                     app:srcCompat="@drawable/scrollsection_content" />
 
                 <TextView
-                    android:id="@+id/lbl_without23"
+                    android:id="@+id/txt_timein3"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -443,7 +443,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without24"
+                    android:id="@+id/txt_timeout3"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -453,11 +453,11 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.350"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without23"
+                    app:layout_constraintStart_toEndOf="@+id/txt_timein3"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without25"
+                    android:id="@+id/txt_date3"
                     android:layout_width="89dp"
                     android:layout_height="44dp"
                     android:fontFamily="@font/nunito_sans_black"
@@ -472,7 +472,7 @@
                     app:layout_constraintVertical_bias="0.303" />
 
                 <TextView
-                    android:id="@+id/lbl_without26"
+                    android:id="@+id/txt_month3"
                     android:layout_width="88dp"
                     android:layout_height="21dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -483,11 +483,11 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.069"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_without25"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_date3"
                     app:layout_constraintVertical_bias="0.058" />
 
                 <TextView
-                    android:id="@+id/lbl_without27"
+                    android:id="@+id/txt_hours3"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -497,8 +497,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.647"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without26"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_without24"
+                    app:layout_constraintStart_toEndOf="@+id/txt_month3"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_timeout3"
                     app:layout_constraintVertical_bias="0.16" />
             </android.support.constraint.ConstraintLayout>
 
@@ -529,7 +529,7 @@
                     app:srcCompat="@drawable/scrollsection_content" />
 
                 <TextView
-                    android:id="@+id/lbl_without28"
+                    android:id="@+id/txt_timeout4"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -539,11 +539,11 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.350"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without29"
+                    app:layout_constraintStart_toEndOf="@+id/txt_timein4"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without29"
+                    android:id="@+id/txt_timein4"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -557,7 +557,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without30"
+                    android:id="@+id/txt_date4"
                     android:layout_width="89dp"
                     android:layout_height="44dp"
                     android:fontFamily="@font/nunito_sans_black"
@@ -572,7 +572,7 @@
                     app:layout_constraintVertical_bias="0.303" />
 
                 <TextView
-                    android:id="@+id/lbl_without31"
+                    android:id="@+id/txt_month4"
                     android:layout_width="88dp"
                     android:layout_height="21dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -583,11 +583,11 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.069"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_without30"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_date4"
                     app:layout_constraintVertical_bias="0.058" />
 
                 <TextView
-                    android:id="@+id/lbl_without32"
+                    android:id="@+id/txt_hours4"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -597,7 +597,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.640"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without31"
+                    app:layout_constraintStart_toEndOf="@+id/txt_month4"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.705" />
             </android.support.constraint.ConstraintLayout>
@@ -629,7 +629,7 @@
                     app:srcCompat="@drawable/scrollsection_content" />
 
                 <TextView
-                    android:id="@+id/lbl_without33"
+                    android:id="@+id/txt_timeout5"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -639,11 +639,11 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.350"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without34"
+                    app:layout_constraintStart_toEndOf="@+id/txt_timein5"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without34"
+                    android:id="@+id/txt_timein5"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans"
@@ -657,7 +657,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/lbl_without35"
+                    android:id="@+id/txt_date5"
                     android:layout_width="89dp"
                     android:layout_height="44dp"
                     android:fontFamily="@font/nunito_sans_black"
@@ -672,7 +672,7 @@
                     app:layout_constraintVertical_bias="0.303" />
 
                 <TextView
-                    android:id="@+id/lbl_without36"
+                    android:id="@+id/txt_month5"
                     android:layout_width="88dp"
                     android:layout_height="21dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -683,11 +683,11 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.069"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_without35"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_date5"
                     app:layout_constraintVertical_bias="0.058" />
 
                 <TextView
-                    android:id="@+id/lbl_without37"
+                    android:id="@+id/txt_hours5"
                     android:layout_width="86dp"
                     android:layout_height="17dp"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -697,8 +697,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.647"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_without36"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_without33"
+                    app:layout_constraintStart_toEndOf="@+id/txt_month5"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_timeout5"
                     app:layout_constraintVertical_bias="0.16" />
             </android.support.constraint.ConstraintLayout>
 

@@ -22,20 +22,30 @@ import java.util.Date;
 public class homepage_intrack extends AppCompatActivity {
     private String id, user;
     TextView real_time, real_date, txt_loggeduser;
+    TextView txt_timeout1, txt_timeout2, txt_timeout3, txt_timeout4, txt_timeout5, txt_timein1, txt_timein2, txt_timein3, txt_timein4, txt_timein5, txt_month1, txt_month2, txt_month3, txt_month4, txt_month5,txt_date1, txt_date2, txt_date3, txt_date4, txt_date5;
+    TextView txt_hour1, txt_hour2, txt_hour3, txt_hour4, txt_hour5, workhours;
     Button btn_start, btn_end;
-    ConstraintLayout framelayout5;
+    ConstraintLayout framelayout1, framelayout2, framelayout3, framelayout4, framelayout5;
     DBConnect DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage_intrack);
 
+         txt_timeout1 = findViewById(R.id.txt_timeout1); txt_timeout2 = findViewById(R.id.txt_timeout2);txt_timeout3 = findViewById(R.id.txt_timeout3);txt_timeout4= findViewById(R.id.txt_timeout4);txt_timeout5= findViewById(R.id.txt_timeout5);
+         txt_timein1= findViewById(R.id.txt_timein1); txt_timein2= findViewById(R.id.txt_timein2); txt_timein3= findViewById(R.id.txt_timein3); txt_timein4= findViewById(R.id.txt_timein4); txt_timein5= findViewById(R.id.txt_timein5);
+         txt_month1= findViewById(R.id.txt_month1); txt_month2= findViewById(R.id.txt_month2); txt_month3= findViewById(R.id.txt_month3); txt_month4= findViewById(R.id.txt_month4); txt_month5= findViewById(R.id.txt_month5);
+         txt_date1= findViewById(R.id.txt_date1); txt_date2= findViewById(R.id.txt_date2); txt_date3= findViewById(R.id.txt_date3);txt_date4= findViewById(R.id.txt_date4); txt_date5= findViewById(R.id.txt_date5);
+         txt_hour1= findViewById(R.id.txt_hours1); txt_hour2= findViewById(R.id.txt_hours2); txt_hour3= findViewById(R.id.txt_hours3); txt_hour4= findViewById(R.id.txt_hours4); txt_hour5= findViewById(R.id.txt_hours5);
+        framelayout1  = findViewById(R.id.frameLayout);framelayout2  = findViewById(R.id.frameLayout2);framelayout3  = findViewById(R.id.frameLayout3);framelayout4  = findViewById(R.id.frameLayout4);framelayout5  = findViewById(R.id.frameLayout5);
         txt_loggeduser = findViewById(R.id.txt_loggeduser);
+        workhours = findViewById(R.id.workhours);
         real_date = findViewById(R.id.real_date);
         real_time = findViewById(R.id.real_time);
         btn_start = findViewById(R.id.btn_start);
         btn_end = findViewById(R.id.btn_end);
-        framelayout5  = findViewById(R.id.frameLayout5);
+
+
         DB = new DBConnect(this);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -54,6 +64,7 @@ public class homepage_intrack extends AppCompatActivity {
             Runnable runnable = new realtimeclock();
             myThread= new Thread(runnable);
             myThread.start();
+            displayData();
         }
 
         if(DB.findExistingDate(id, getDate())){
@@ -76,6 +87,7 @@ public class homepage_intrack extends AppCompatActivity {
                 }else{
                     Toast.makeText(homepage_intrack.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
                 }
+                displayData();
             }
         });
 
@@ -118,6 +130,7 @@ public class homepage_intrack extends AppCompatActivity {
                     Toast.makeText(homepage_intrack.this, "Something went Wrong, Refresh Page!", Toast.LENGTH_SHORT).show();
                 }
 
+                displayData();
             }
         });
 
@@ -125,6 +138,75 @@ public class homepage_intrack extends AppCompatActivity {
 
 
     public void displayData(){
+        String[] month = {"null", "January", "February", "March","April","May", "June", "July", "August", "September", "October", "November", "December"};
+        framelayout1.setVisibility(View.GONE);
+        framelayout2.setVisibility(View.GONE);
+        framelayout3.setVisibility(View.GONE);
+        framelayout4.setVisibility(View.GONE);
+        framelayout5.setVisibility(View.GONE);
+
+
+        Cursor ps = DB.finduserData(id);
+        int i = 0;
+        int mins_total = 0;
+
+        if(ps.getCount() != 0){
+            while(ps.moveToNext()){
+                int mins = ps.getInt(3);
+                mins_total += mins;
+                String[] timeindata = ps.getString(1).split(":");
+                String[] datedate = ps.getString(4).split("/");
+                String total_hours = String.valueOf(mins/60) ;
+                String new_timein = "";
+                String new_timeout = "";
+                Boolean halftimein = false;
+                Boolean halftimeout = false;
+
+                int hourtimein = Integer.valueOf(timeindata[0]);
+                if(hourtimein > 12){
+                    hourtimein -= 12;
+                    halftimein = true;
+                }
+                new_timein = String.valueOf(hourtimein) + ":" + timeindata[1] + ":" + timeindata[2] + (halftimein ? " PM" : " AM");
+
+
+                if(ps.getString(2) != null){
+                    String[] timeoutdata = ps.getString(2).split(":");
+                    int hourtimeout = Integer.valueOf(timeoutdata[0]);
+                    if(hourtimeout > 12){
+                        hourtimeout -= 12;
+                        halftimeout = true;
+                    }
+                    new_timeout = String.valueOf(hourtimeout) + ":" + timeoutdata[1] + ":" + timeoutdata[2] + (halftimeout ? " PM" : " AM");
+                }
+
+
+                String dayval = datedate[0];
+                String monthval = month[Integer.parseInt(datedate[1])];
+
+                if(i == 0){
+                    framelayout1.setVisibility(View.VISIBLE);
+                    txt_timein1.setText(new_timein);
+                    txt_timeout1.setText(new_timeout);
+                    txt_date1.setText(dayval);
+                    txt_month1.setText(monthval);
+                    txt_hour1.setText(total_hours);
+                    i++;
+                }else if(i == 1){
+                    framelayout2.setVisibility(View.VISIBLE);
+                    txt_timein2.setText(new_timein);
+                    txt_timeout2.setText(new_timeout);
+                    txt_date2.setText(dayval);
+                    txt_month2.setText(monthval);
+                    txt_hour2.setText(total_hours);
+                    i++;
+                }
+
+            }
+        }
+
+        String hours_total = String.valueOf(mins_total/60);
+        workhours.setText(workhours.getText().toString().replace("00", hours_total));
 
     }
 

@@ -126,7 +126,7 @@ public class DBConnect extends SQLiteOpenHelper {
 
     public Cursor finduserData (String id){
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("SELECT * FROM UserRecord WHERE user_id = ? ", new String[]{id});
+        Cursor cursor = DB.rawQuery("SELECT * FROM UserRecord WHERE user_id = ? ORDER BY Record_Date DESC", new String[]{id});
         return cursor;
     }
 
