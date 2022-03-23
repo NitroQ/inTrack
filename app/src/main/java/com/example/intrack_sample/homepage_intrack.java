@@ -227,7 +227,7 @@ public class homepage_intrack extends AppCompatActivity {
                     txt_month4.setText(monthval);
                     txt_hour4.setText(total_hours);
                     i++;
-                }else if(i == 1){
+                }else if(i == 4){
                     framelayout5.setVisibility(View.VISIBLE);
                     txt_timein5.setText(new_timein);
                     txt_timeout5.setText(new_timeout);
