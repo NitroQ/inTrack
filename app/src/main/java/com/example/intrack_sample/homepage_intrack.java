@@ -1,6 +1,7 @@
 package com.example.intrack_sample;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -24,7 +25,7 @@ public class homepage_intrack extends AppCompatActivity {
     TextView real_time, real_date, txt_loggeduser;
     TextView txt_timeout1, txt_timeout2, txt_timeout3, txt_timeout4, txt_timeout5, txt_timein1, txt_timein2, txt_timein3, txt_timein4, txt_timein5, txt_month1, txt_month2, txt_month3, txt_month4, txt_month5,txt_date1, txt_date2, txt_date3, txt_date4, txt_date5;
     TextView txt_hour1, txt_hour2, txt_hour3, txt_hour4, txt_hour5, workhours;
-    Button btn_start, btn_end;
+    Button btn_start, btn_end, btn_logout;
     ConstraintLayout framelayout1, framelayout2, framelayout3, framelayout4, framelayout5;
     DBConnect DB;
     @Override
@@ -44,6 +45,7 @@ public class homepage_intrack extends AppCompatActivity {
         real_time = findViewById(R.id.real_time);
         btn_start = findViewById(R.id.btn_start);
         btn_end = findViewById(R.id.btn_end);
+        btn_logout = findViewById(R.id.btn_logout);
 
 
         DB = new DBConnect(this);
@@ -75,6 +77,15 @@ public class homepage_intrack extends AppCompatActivity {
         if(DB.findExistingTime(id, getDate())){
             btn_end.setVisibility(View.INVISIBLE);
         }
+
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent login1 = new Intent(homepage_intrack.this, login_intrack.class);
+                startActivity(login1);
+                finish();
+            }
+        });
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -200,13 +211,37 @@ public class homepage_intrack extends AppCompatActivity {
                     txt_month2.setText(monthval);
                     txt_hour2.setText(total_hours);
                     i++;
+                }else if(i == 2){
+                    framelayout3.setVisibility(View.VISIBLE);
+                    txt_timein3.setText(new_timein);
+                    txt_timeout3.setText(new_timeout);
+                    txt_date3.setText(dayval);
+                    txt_month3.setText(monthval);
+                    txt_hour3.setText(total_hours);
+                    i++;
+                }else if(i == 3){
+                    framelayout4.setVisibility(View.VISIBLE);
+                    txt_timein4.setText(new_timein);
+                    txt_timeout4.setText(new_timeout);
+                    txt_date4.setText(dayval);
+                    txt_month4.setText(monthval);
+                    txt_hour4.setText(total_hours);
+                    i++;
+                }else if(i == 1){
+                    framelayout5.setVisibility(View.VISIBLE);
+                    txt_timein5.setText(new_timein);
+                    txt_timeout5.setText(new_timeout);
+                    txt_date5.setText(dayval);
+                    txt_month5.setText(monthval);
+                    txt_hour5.setText(total_hours);
+                    i++;
                 }
 
             }
         }
 
         String hours_total = String.valueOf(mins_total/60);
-        workhours.setText(workhours.getText().toString().replace("00", hours_total));
+        workhours.setText(hours_total + " Hours of Work");
 
     }
 

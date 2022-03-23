@@ -20,6 +20,7 @@ public class createaccount_intrack extends AppCompatActivity {
     public void openlogin() {
         Intent login = new Intent(this, login_intrack.class);
         startActivity(login);
+        finish();
     }
 
     @Override

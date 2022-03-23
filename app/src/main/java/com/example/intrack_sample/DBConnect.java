@@ -16,7 +16,7 @@ public class DBConnect extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("CREATE TABLE UserLogin (user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, fname TEXT NOT NULL, lname TEXT NOT NULL, username TEXT UNIQUE NOT NULL, email TEXT NOT NULL, password TEXT NOT NULL)");
-        DB.execSQL("CREATE TABLE UserRecord (user_id INTEGER NOT NULL, Time_In VARCHAR(6) NOT NULL, Time_Out VARCHAR(6) , Total INT, Record_Date DATE UNIQUE NOT NULL)");
+        DB.execSQL("CREATE TABLE UserRecord (user_id INTEGER NOT NULL, Time_In VARCHAR(6) NOT NULL, Time_Out VARCHAR(6) , Total INT, Record_Date DATE NOT NULL)");
     }
 
 

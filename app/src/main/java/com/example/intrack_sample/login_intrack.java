@@ -78,6 +78,7 @@ public class login_intrack extends AppCompatActivity {
         home.putExtra("id", id);
         home.putExtra("name", name);
         startActivity(home);
+        finish();
     }
 
 
