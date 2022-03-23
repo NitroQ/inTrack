@@ -62,13 +62,14 @@
 
     <ScrollView
         android:id="@+id/scrolling"
-        android:layout_width="326dp"
-        android:layout_height="440dp"
+        android:layout_width="327dp"
+        android:layout_height="325dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.12"
+        app:layout_constraintVertical_bias="0.269"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -259,7 +260,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.827"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.4" />
+                app:layout_constraintVertical_bias="0.4"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 
