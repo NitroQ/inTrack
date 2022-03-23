@@ -90,14 +90,20 @@ public class homepage_intrack extends AppCompatActivity {
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //add time in data to UserRecord
                 Boolean time_in = DB.TimeIn(id, getTime(), getDate());
 
+                //if data was added successfully
                 if(time_in){
+                    //hide start work and show end work
                     btn_start.setVisibility(View.INVISIBLE);
                     btn_end.setVisibility(View.VISIBLE);
                 }else{
+                    //if something went wrong:
                     Toast.makeText(homepage_intrack.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
                 }
+                //update data
                 displayData();
             }
         });
@@ -106,21 +112,31 @@ public class homepage_intrack extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String timeinval = "";
+
+                //find existing date that was made for time in
                 Cursor rs = DB.findTimeIn(id, getDate());
 
+                //if data was found
                 if(rs.getCount() != 0){
                     while(rs.moveToNext()){
+                        //store it temporarily
                        timeinval = rs.getString(1);
                     }
                 }else{
                     Toast.makeText(homepage_intrack.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
                 }
 
+
                 int hour = 0;
                 int min = 0;
+
+                //if timein has value
                 if(!timeinval.equals("")) {
+                    //convert time to int
                     String[] timein = timeinval.split(":");
                     String[] timeout = getTime().split(":");
+
+                    //calculating total mins/hours passed
                     hour += Integer.parseInt(timeout[0])-Integer.parseInt(timein[0]);
                     int start = Integer.parseInt(timein[1]);
                     int end = Integer.parseInt(timeout[1]);
@@ -128,19 +144,23 @@ public class homepage_intrack extends AppCompatActivity {
                         --hour;
                         min += 60;
                     }
+                    //round up
                     min += Math.abs(end-start);
                 }
+                //final calculated time
                 String result = String.valueOf((hour*60) + min);
 
+                //update time data with timeout value and add total mins
                 Boolean timeoutval = DB.TimeOut(id, getTime(), result, getDate());
 
+                //if successful, show this and hide end work button
                 if(timeoutval){
                     Toast.makeText(homepage_intrack.this, "Timed Out!", Toast.LENGTH_SHORT).show();
                     btn_end.setVisibility(View.INVISIBLE);
                 }else{
                     Toast.makeText(homepage_intrack.this, "Something went Wrong, Refresh Page!", Toast.LENGTH_SHORT).show();
                 }
-
+                // update dashboard data
                 displayData();
             }
         });
@@ -149,6 +169,7 @@ public class homepage_intrack extends AppCompatActivity {
 
 
     public void displayData(){
+        //determine month and hiding elements if not needed
         String[] month = {"null", "January", "February", "March","April","May", "June", "July", "August", "September", "October", "November", "December"};
         framelayout1.setVisibility(View.GONE);
         framelayout2.setVisibility(View.GONE);
@@ -156,20 +177,28 @@ public class homepage_intrack extends AppCompatActivity {
         framelayout4.setVisibility(View.GONE);
         framelayout5.setVisibility(View.GONE);
 
-
+        //find all the data for that user
         Cursor ps = DB.finduserData(id);
+
+        //initialize values
         int i = 0;
         int mins_total = 0;
 
+        //if data is available
         if(ps.getCount() != 0){
             while(ps.moveToNext()){
+                //get total mins and add it
                 int mins = ps.getInt(3);
                 mins_total += mins;
+
+                // converting time and date to usuable int values
                 String[] timeindata = ps.getString(1).split(":");
                 String[] datedate = ps.getString(4).split("/");
                 String total_hours = String.valueOf(mins/60) ;
                 String new_timein = "";
                 String new_timeout = "";
+
+                //checking AM/PM
                 Boolean halftimein = false;
                 Boolean halftimeout = false;
 
@@ -178,9 +207,12 @@ public class homepage_intrack extends AppCompatActivity {
                     hourtimein -= 12;
                     halftimein = true;
                 }
+
+                //show time in in 12 hour format
                 new_timein = String.valueOf(hourtimein) + ":" + timeindata[1] + ":" + timeindata[2] + (halftimein ? " PM" : " AM");
 
 
+                //if data is not yet available it will be shown as blank
                 if(ps.getString(2) != null){
                     String[] timeoutdata = ps.getString(2).split(":");
                     int hourtimeout = Integer.valueOf(timeoutdata[0]);
@@ -188,13 +220,16 @@ public class homepage_intrack extends AppCompatActivity {
                         hourtimeout -= 12;
                         halftimeout = true;
                     }
+                    //show time out in 12 hour format
                     new_timeout = String.valueOf(hourtimeout) + ":" + timeoutdata[1] + ":" + timeoutdata[2] + (halftimeout ? " PM" : " AM");
                 }
 
-
+                //display String the month and date
                 String dayval = datedate[0];
                 String monthval = month[Integer.parseInt(datedate[1])];
 
+
+                //show the data in Daily time record
                 if(i == 0){
                     framelayout1.setVisibility(View.VISIBLE);
                     txt_timein1.setText(new_timein);
@@ -240,6 +275,7 @@ public class homepage_intrack extends AppCompatActivity {
             }
         }
 
+        //calculate the total amount of hours
         String hours_total = String.valueOf(mins_total/60);
         workhours.setText(hours_total + " Hours of Work");
 
