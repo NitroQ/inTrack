@@ -92,18 +92,16 @@
                 android:id="@+id/txt_name2"
                 android:layout_width="match_parent"
                 android:layout_height="120px"
-                android:layout_marginBottom="92dp"
                 android:background="@drawable/shape_styles"
-                android:ems="15"
-                android:fontFamily="@font/nunito_sans"
+                android:ems="10"
+                android:fontFamily="@font/nunito_sans_bold"
                 android:inputType="textPersonName"
                 android:padding="25px"
                 android:textSize="46.07px"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_without"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_without4"
                 app:layout_constraintVertical_bias="0.4"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -196,8 +194,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lbl_without2"
-                app:layout_constraintVertical_bias="0.4" />
-
+                app:layout_constraintVertical_bias="0.4"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/lbl_without4"
@@ -209,28 +207,27 @@
                 android:textSize="46.07px"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.129"
+                app:layout_constraintHorizontal_bias="0.13"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_email"
+                app:layout_constraintTop_toBottomOf="@+id/txt_name"
                 app:layout_constraintVertical_bias="0.4" />
 
             <EditText
                 android:id="@+id/txt_pass"
                 android:layout_width="match_parent"
                 android:layout_height="120px"
-                android:layout_marginBottom="92dp"
                 android:background="@drawable/shape_styles"
-                android:ems="15"
-                android:fontFamily="@font/nunito_sans"
+                android:ems="10"
+                android:fontFamily="@font/nunito_sans_bold"
                 android:inputType="textPassword"
                 android:padding="25px"
                 android:textSize="46.07px"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.827"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_without"
-                app:layout_constraintVertical_bias="0.4" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_without4"
+                app:layout_constraintVertical_bias="0.4"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/lbl_without19"
