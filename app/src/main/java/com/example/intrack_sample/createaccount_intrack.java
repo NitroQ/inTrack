@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class createaccount_intrack extends AppCompatActivity {
 
     EditText txt_name, txt_name2, txt_username, txt_email, txt_pass, txt_pass2;
@@ -51,8 +54,11 @@ public class createaccount_intrack extends AppCompatActivity {
                 String email = txt_email.getText().toString();
                 String pass = txt_pass.getText().toString();
                 String pass2 = txt_pass2.getText().toString();
+                String emailpattern = "^[^@\\s]+@[^@\\s\\.]+\\.[^@\\.\\s]+$";
+                Pattern pattern = Pattern.compile(emailpattern, Pattern.CASE_INSENSITIVE);
+                Matcher matcher = pattern.matcher(email);
 
-               if(fname.trim().equals("") || fname == null){
+                if(fname.trim().equals("") || fname == null){
                    Toast.makeText(createaccount_intrack.this, "Name is Required", Toast.LENGTH_SHORT).show();
                }else if(lname.trim().equals("") || lname == null){
                    Toast.makeText(createaccount_intrack.this, "Name is Required", Toast.LENGTH_SHORT).show();
@@ -60,7 +66,9 @@ public class createaccount_intrack extends AppCompatActivity {
                    Toast.makeText(createaccount_intrack.this, "Username is Required", Toast.LENGTH_SHORT).show();
                 }else if(email.trim().equals("") || email == null) {
                    Toast.makeText(createaccount_intrack.this, "Email is Required", Toast.LENGTH_SHORT).show();
-                }else if(pass.trim().equals("") || pass == null){
+                }else if(!matcher.matches()) {
+                   Toast.makeText(createaccount_intrack.this, "Email is Invalid", Toast.LENGTH_SHORT).show();
+               }else if(pass.trim().equals("") || pass == null){
                    Toast.makeText(createaccount_intrack.this, "Password is Required", Toast.LENGTH_SHORT).show();
                 }else if(!pass.equals(pass2)){
                    Toast.makeText(createaccount_intrack.this, "Passwords Do Not Match.", Toast.LENGTH_SHORT).show();
